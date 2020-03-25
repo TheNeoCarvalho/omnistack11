@@ -1,9 +1,9 @@
-const exprees = require('express')
+const express = require('express')
+const routes = require('./routes')
 
-const app = exprees()
+const app = express()
 
-app.get('/', (req, res) => {
-  res.send('Ominstrack 11')
-})
+app.use(express.json())
+app.use(routes)
 
 app.listen(3333)
