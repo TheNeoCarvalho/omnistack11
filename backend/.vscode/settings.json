@@ -4,6 +4,16 @@
       "database": "${workspaceFolder}/src/database/db.sqlite",
       "dialect": "SQLite",
       "name": "sqlite"
+    },
+    {
+      "database": "${workspaceFolder}/src/database/db.sqlite",
+      "dialect": "SQLite",
+      "name": "SQLite"
+    },
+    {
+      "database": "${workspaceFolder}/src/database/db.sqlite",
+      "dialect": "SQLite",
+      "name": "SQLite"
     }
   ],
   "sqltools.useNodeRuntime": true
