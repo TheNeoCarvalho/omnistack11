@@ -4,8 +4,15 @@ const crypto = require('crypto')
 
 module.exports = {
 
+  async index (req, res) {
+    const ongs = await connection('ongs').select('*')
+  
+    res.json(ongs)
+    
+  },
+
   async store(req, res) {
-      const { name, email, whatspapp, city, uf} = req.body
+      const { name, email, whatspapp, city, uf } = req.body
     
       const id = crypto.randomBytes(4).toString('HEX')
     
@@ -20,6 +27,6 @@ module.exports = {
     
       res.json({id})
     },
-  
+
 
 }

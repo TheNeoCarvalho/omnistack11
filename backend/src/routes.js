@@ -2,15 +2,20 @@ const express = require('express')
 
 const routes = express.Router()
 
-
 const OngController = require('./controllers/OngController')
+const IncidentController = require('./controllers/IncidentController')
+const ProfileController = require('./controllers/ProfileController')
+const SessionController = require('./controllers/SessionController')
 
-// routes.get('/ongs', async (req, res) => {
-//   const ongs = await connection('ongs').select('*')
+routes.post('/session', SessionController.create)
 
-//   res.json(ongs)
-// })
-
+routes.get('/ongs', OngController.index)
 routes.post('/ongs', OngController.store)
+
+routes.get('/incidents', IncidentController.index)
+routes.post('/incidents', IncidentController.store)
+routes.delete('/incidents/:id', IncidentController.delete)
+
+routes.get('/incidents/:ong_id', ProfileController.index)
 
 module.exports = routes
